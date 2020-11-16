@@ -1,12 +1,10 @@
-<div class="container-fluid mt-n-5 ml-3 mr-3">
+<div class="continer-fluid mt-n-5 ml-3 mr-3">
   <div class="container">
 
-<a href="<?= base_url('user/addproduk')?>" class="btn btn-primary m-3">(+) Tambah Produk</a>
-
 <?php foreach ($uproduk as $i) : ?>
-<?php if ($i->user_id==$user['user_id']) : ?>
+<?php if ($i->user_id==$user['user_id']) : ?><br>
     <div class="card border" >
-      <div class="row">
+      <div class="row no-gutters">
         <div class="col-md-12">
           <div class="card-body">
             <div class="container-fluid">
@@ -25,22 +23,28 @@
                 <div class="col-md-8">
                   <h5 class="card-title "><?= $i->nama_produk ?></h5>
                   <p class="card-text"><?= $i->merk ?></p>
-                  <p class="card-text"><small class="text-muted">IDR <?= $i->harga ?></small></p>
+                  <p class="card-text"><small class="text-muted">Rp <?= $i->harga ?></small></p>
                 </div>
 
                 <div class="col-md-2">
-                  <a href="<?= base_url('user/produk/edit/'.$i->produk_id)?>" class="btn btn-success btn-sm mt-4 mb-1"><i class="fas fa-fw fa-edit"></i> Edit</a><br>
+                  <a href="<?= base_url('user/produk/edit/'.$i->produk_id)?>" class="btn btn-primary btn-sm mt-4 mb-1"><i class="fas fa-fw fa-edit"></i> Edit</a><br>
                   <a href="<?= base_url('user/produk/del/'.$i->produk_id)?>" class="btn btn-danger btn-sm "><i class="fas fa-fw fa-trash"></i> Hapus</a>
                 </div>
 
+
+
               </div>
+
             </div>
           </div>
         </div>
       </div>
     </div>
+
     <?php endif  ?>
     <?php endforeach;  ?>
+
+     <a href="<?= base_url('user/addproduk')?>" class="btn btn-success m-3"><i class="fa fa-fw fa-box-open"></i> Tambah Produk</a><br>
 </div>
 </div>
 
